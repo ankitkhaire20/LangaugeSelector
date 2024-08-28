@@ -8,11 +8,14 @@
 import React from 'react';
 
 import RootContainer from './src/screens/RootContainer';
+import { ThemeProvider } from './src/context/ThemeProviders';
 
 
 function App(): React.JSX.Element {
   return (
-    <RootContainer />
+    <ThemeProvider>
+      <RootContainer />
+    </ThemeProvider>
   )
 }
 

@@ -63,31 +63,34 @@ export const TabBarNavigation: React.FC = () => {
                     let iconName;
                     if (route.name === Routes.Home) {
                         iconName = 'home';
-                    } else if (route.name === Routes.Profile) {
+                    }
+                    else if (route.name === Routes.Profile) {
                         iconName = 'setting';
                     }
                     return (
-                        <View style={styles.bottomTab}>
+                        <View>
                             <CustomIcon
                                 name={iconName}
                                 size={FontSize.SIZE_26}
                                 color={focused ? 'red' : Color.TEXT_BLACK}
                             />
                         </View>
-                    );
+                    )
                 },
                 tabBarLabel: ({ focused }) => {
                     let label;
                     if (route.name === Routes.Home) {
-                        label = "Home";
+                        label = 'Home';
                     } else if (route.name === Routes.Profile) {
-                        label = "Profile";
+                        label = 'Profile'
                     }
                     return (
-                        <Text>
+                        <Text style={{
+                            color: focused ? 'red' : Color.GRAY
+                        }} >
                             {label}
                         </Text>
-                    );
+                    )
                 },
                 tabBarStyle: {
                     height: 55 + insets.bottom,
