@@ -1,8 +1,6 @@
 // src/context/ThemeContext.tsx
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-
-
 
 export type theme = 'light' | 'dark' | 'system';
 
@@ -11,8 +9,7 @@ interface ThemeContextProps {
     setTheme: (theme: theme) => void;
 }
 
-
-const ThemeContext = createContext<ThemeContextProps>(undefined);
+const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 // Create a custom hook to use the ThemeContext
 export const useTheme = () => {
@@ -23,27 +20,25 @@ export const useTheme = () => {
     return context;
 };
 
-
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-
     const systemTheme = useColorScheme(); // Detects the system theme (light or dark)
+    console.log("systemThem--", systemTheme);
+
     const [theme, setTheme] = useState<theme>('system'); // Default to 'system'
+    const [currentTheme, setCurrentTheme] = useState<theme>(systemTheme);
 
-    const determineTheme = () => {
+    // Update currentTheme when systemTheme or theme changes
+    useEffect(() => {
         if (theme === 'system') {
-            return systemTheme || 'light'; // Default to light if system theme is unknown
+            setCurrentTheme(systemTheme);
+        } else {
+            setCurrentTheme(theme);
         }
-        return theme;
-    }
-
-    const currentTheme = determineTheme();
-    console.log("Current Thme---", currentTheme);
-
-
+    }, [theme, systemTheme]);
 
     return (
-        <ThemeContext.Provider value={{ theme: currentTheme, setTheme }} >
+        <ThemeContext.Provider value={{ theme: currentTheme, setTheme }}>
             {children}
         </ThemeContext.Provider>
-    )
-} 
+    );
+};
