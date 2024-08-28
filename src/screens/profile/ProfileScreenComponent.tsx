@@ -2,13 +2,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Button, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native";
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-
 import styles from "./styles";
 import CheckBox from "../../components/CheckBox/CheckBox";
-
-
-import { theme, useTheme } from "../../context/ThemeProviders";
 import CustomIcon from "../../components/customIcon";
+
+import { theme as ThemeType, useTheme } from "../../context/ThemeProviders";
+
 
 interface ProfileScreenComponentProps {
     isEnabled: boolean;
@@ -17,63 +16,62 @@ interface ProfileScreenComponentProps {
 
 interface ThemeOption {
     index: number;
-    theme: theme; // Ensure this matches the 'theme' type defined in your context
+    theme: ThemeType; // Ensure this matches the 'theme' type defined in your context
     checked: boolean;
 }
 
+
+
+// ProfileScreenComponent.tsx
+
 const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabled, toggleSwitch }) => {
-    const { theme, setTheme } = useTheme();
+    const { theme, currentTheme, setTheme } = useTheme(); // Extract both theme and currentTheme
     const bottomSheetRef = useRef<BottomSheet>(null);
-
-    // Update the checked state of the options based on the selected theme
-    useEffect(() => {
-        setThemes(prevThemes =>
-            prevThemes.map(themeOption => ({
-                ...themeOption,
-                checked: themeOption.theme === theme
-            }))
-        );
-    }, [theme]);
-
 
     const handleSheetChanges = useCallback((index: number) => {
         console.log('handleSheetChanges', index);
     }, []);
 
     const initialThemes: ThemeOption[] = [
-        { index: 0, theme: 'system', checked: false },
-        { index: 1, theme: 'light', checked: false },
-        { index: 2, theme: 'dark', checked: false },
+        { index: 0, theme: 'system', checked: theme === 'system' },
+        { index: 1, theme: 'light', checked: theme === 'light' },
+        { index: 2, theme: 'dark', checked: theme === 'dark' },
     ];
 
     const [themes, setThemes] = useState<ThemeOption[]>(initialThemes);
 
-    // Update checkboxes to reflect the currently selected theme
+    useEffect(() => {
+        // Update the checked state of the options based on the selected theme
+        setThemes((prevThemes) =>
+            prevThemes.map((themeOption) => ({
+                ...themeOption,
+                checked: themeOption.theme === theme,
+            }))
+        );
+    }, [theme]);
+
     const handleThemeSelect = (index: number) => {
-        const updatedThemes = themes.map(themeOption => ({
+        const updatedThemes = themes.map((themeOption) => ({
             ...themeOption,
-            checked: themeOption.index === index
+            checked: themeOption.index === index,
         }));
 
-        const selectedTheme = updatedThemes.find(item => item.checked)?.theme;
+        const selectedTheme = updatedThemes.find((item) => item.checked)?.theme;
         console.log("selectedTheme---", selectedTheme);
 
-        setTheme(selectedTheme as theme);
-        bottomSheetRef.current?.close()
+        setTheme(selectedTheme as ThemeType);
+        bottomSheetRef.current?.close();
         setThemes(updatedThemes);
     };
 
-
-
-    // Define styles based on the current theme
     const containerStyle: ViewStyle = {
         ...styles.container,
-        backgroundColor: theme === 'dark' ? '#000' : '#fff', // Adjusted dark mode color
+        backgroundColor: currentTheme === 'dark' ? '#000' : '#fff',
     };
 
     const textStyle: TextStyle = {
         ...styles.text,
-        color: theme === 'dark' ? '#000' : '#000', // Adjusted dark mode text color
+        color: currentTheme === 'dark' ? '#000' : '#000',
     };
 
     return (
@@ -85,15 +83,15 @@ const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabl
                 </View>
                 <BottomSheet
                     ref={bottomSheetRef}
-                    index={-1} // Start with the bottom sheet closed
-                    snapPoints={[250]} // Adjust the height as needed
+                    index={-1}
+                    snapPoints={[250]}
                     onChange={handleSheetChanges}
                 >
                     <BottomSheetView style={styles.contentContainer}>
                         <View style={styles.header}>
                             <Text style={styles.headerText}>Select Theme</Text>
                             <TouchableOpacity onPress={() => bottomSheetRef.current?.close()}>
-                                <CustomIcon name="close" size={24} color={theme === 'dark' ? '#000' : '#000'} />
+                                <CustomIcon name="close" size={24} color={currentTheme === 'dark' ? '#fff' : '#000'} />
                             </TouchableOpacity>
                         </View>
                         {themes.map((themeOption) => (
@@ -117,3 +115,4 @@ const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabl
 };
 
 export default ProfileScreenComponent;
+

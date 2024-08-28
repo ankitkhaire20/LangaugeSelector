@@ -1,17 +1,21 @@
 // src/context/ThemeContext.tsx
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useColorScheme } from 'react-native';
 
-export type theme = 'light' | 'dark' | 'system';
+// Define theme types
+type ThemeType = 'light' | 'dark' | 'system';
 
+// Define context properties
 interface ThemeContextProps {
-    theme: theme;
-    setTheme: (theme: theme) => void;
+    theme: ThemeType; // User-selected theme
+    currentTheme: 'light' | 'dark'; // The theme currently being applied
+    setTheme: (theme: ThemeType) => void;
 }
 
+// Create Theme Context
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-// Create a custom hook to use the ThemeContext
+// Custom hook to use the ThemeContext
 export const useTheme = () => {
     const context = useContext(ThemeContext);
     if (!context) {
@@ -20,24 +24,24 @@ export const useTheme = () => {
     return context;
 };
 
+// ThemeProvider component
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const systemTheme = useColorScheme(); // Detects the system theme (light or dark)
-    console.log("systemThem--", systemTheme);
+    const systemTheme = useColorScheme(); // Detect system theme
+    const [theme, setTheme] = useState<ThemeType>('system'); // Default theme is 'system'
+    const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>(systemTheme ?? 'light');
 
-    const [theme, setTheme] = useState<theme>('system'); // Default to 'system'
-    const [currentTheme, setCurrentTheme] = useState<theme>(systemTheme);
-
-    // Update currentTheme when systemTheme or theme changes
+    // Update current theme whenever the user-selected or system theme changes
     useEffect(() => {
+        // If the theme is set to 'system', follow the system theme
         if (theme === 'system') {
-            setCurrentTheme(systemTheme);
+            setCurrentTheme(systemTheme ?? 'light');
         } else {
             setCurrentTheme(theme);
         }
     }, [theme, systemTheme]);
 
     return (
-        <ThemeContext.Provider value={{ theme: currentTheme, setTheme }}>
+        <ThemeContext.Provider value={{ theme, currentTheme, setTheme }}>
             {children}
         </ThemeContext.Provider>
     );
