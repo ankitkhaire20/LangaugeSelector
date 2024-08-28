@@ -33,6 +33,7 @@ local.properties
 
 # Node.js
 node_modules/
+node_modules/@babel
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -4,6 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>icomoon.ttf</string>
+		<string>icomoon.svg</string>
+		<string>icomoon.wolf</string>
+		<string>icomoon.eot</string>
 		<string>Roboto-Bold.ttf</string>
 		<string>Moderustic-Bold.ttf</string>
 		<string>Moderustic-Regular.ttf</string>
