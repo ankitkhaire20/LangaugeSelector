@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import ProfileScreenComponent from "./ProfileScreenComponent";
-import { useTheme } from "../../context/ThemeProviders";
+
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import { Button, Text, View } from "react-native";
 import styles from "./styles";
@@ -10,7 +10,7 @@ const ProfileScreenContainer: React.FC = () => {
 
     const [isEnabled, setIsEnabled] = useState(false)
 
-    const { theme, setTheme } = useTheme();
+
     const bottomSheetRef = useRef<BottomSheet>(null);
 
     // callbacks

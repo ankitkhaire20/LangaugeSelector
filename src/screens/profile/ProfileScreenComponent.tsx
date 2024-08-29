@@ -6,7 +6,7 @@ import styles from "./styles";
 import CheckBox from "../../components/CheckBox/CheckBox";
 import CustomIcon from "../../components/customIcon";
 
-import { theme as ThemeType, useTheme } from "../../context/ThemeProviders";
+
 
 
 interface ProfileScreenComponentProps {
@@ -14,41 +14,26 @@ interface ProfileScreenComponentProps {
     toggleSwitch: () => void;
 }
 
-interface ThemeOption {
-    index: number;
-    theme: ThemeType; // Ensure this matches the 'theme' type defined in your context
-    checked: boolean;
-}
-
-
 
 // ProfileScreenComponent.tsx
 
 const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabled, toggleSwitch }) => {
-    const { theme, currentTheme, setTheme } = useTheme(); // Extract both theme and currentTheme
+
     const bottomSheetRef = useRef<BottomSheet>(null);
 
     const handleSheetChanges = useCallback((index: number) => {
         console.log('handleSheetChanges', index);
     }, []);
 
-    const initialThemes: ThemeOption[] = [
-        { index: 0, theme: 'system', checked: theme === 'system' },
-        { index: 1, theme: 'light', checked: theme === 'light' },
-        { index: 2, theme: 'dark', checked: theme === 'dark' },
+    const initialThemes = [
+        { index: 0, theme: 'system', checked: false },
+        { index: 1, theme: 'light', checked: false },
+        { index: 2, theme: 'dark', checked: false },
     ];
 
-    const [themes, setThemes] = useState<ThemeOption[]>(initialThemes);
+    const [themes, setThemes] = useState(initialThemes);
 
-    useEffect(() => {
-        // Update the checked state of the options based on the selected theme
-        setThemes((prevThemes) =>
-            prevThemes.map((themeOption) => ({
-                ...themeOption,
-                checked: themeOption.theme === theme,
-            }))
-        );
-    }, [theme]);
+
 
     const handleThemeSelect = (index: number) => {
         const updatedThemes = themes.map((themeOption) => ({
@@ -59,26 +44,17 @@ const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabl
         const selectedTheme = updatedThemes.find((item) => item.checked)?.theme;
         console.log("selectedTheme---", selectedTheme);
 
-        setTheme(selectedTheme as ThemeType);
         bottomSheetRef.current?.close();
         setThemes(updatedThemes);
     };
 
-    const containerStyle: ViewStyle = {
-        ...styles.container,
-        backgroundColor: currentTheme === 'dark' ? '#000' : '#fff',
-    };
 
-    const textStyle: TextStyle = {
-        ...styles.text,
-        color: currentTheme === 'dark' ? '#000' : '#000',
-    };
 
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <View style={containerStyle}>
+            <View style={styles.container}>
                 <View style={styles.switchContainer}>
-                    <Text style={textStyle}>Current Theme: {theme}</Text>
+                    <Text style={{}}>Current Theme: { }</Text>
                     <Button title="Change Theme" onPress={() => bottomSheetRef.current?.expand()} />
                 </View>
                 <BottomSheet
@@ -91,7 +67,7 @@ const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabl
                         <View style={styles.header}>
                             <Text style={styles.headerText}>Select Theme</Text>
                             <TouchableOpacity onPress={() => bottomSheetRef.current?.close()}>
-                                <CustomIcon name="close" size={24} color={currentTheme === 'dark' ? '#fff' : '#000'} />
+                                <CustomIcon name="close" size={24} color={'#000'} />
                             </TouchableOpacity>
                         </View>
                         {themes.map((themeOption) => (

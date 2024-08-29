@@ -13,9 +13,9 @@ import { ThemeProvider } from './src/context/ThemeProviders';
 
 function App(): React.JSX.Element {
   return (
-    <ThemeProvider>
-      <RootContainer />
-    </ThemeProvider>
+    // <ThemeProvider>
+    <RootContainer />
+    // </ThemeProvider>
   )
 }
 

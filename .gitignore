@@ -1,78 +1,89 @@
-# OSX
-.DS_Store
-
-# Xcode
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata/
-*.xccheckout
-*.moved-aside
-DerivedData/
-*.hmap
-*.ipa
-*.xcuserstate
-ios/.xcode.env.local
-
-# Android/IntelliJ
-build/
-.idea/
-.gradle/
-local.properties
-*.iml
-*.hprof
-.cxx/
-*.keystore
-!debug.keystore
-
-# Node.js
+# Node.js dependencies
 node_modules/
-node_modules/@babel
+
+# React Native packager output
+/ios/build/
+/android/app/build/
+/android/.gradle/
+/android/.idea/
+/android/.settings/
+/android/local.properties
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
-# fastlane
-**/fastlane/report.xml
-**/fastlane/Preview.html
-**/fastlane/screenshots/
-**/fastlane/test_output/
+# OS-specific files
+.DS_Store
+Thumbs.db
 
-# Bundle artifact
-*.jsbundle
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
 
-# Ruby / CocoaPods
-ios/Pods/
-vendor/bundle/
-
-# Temporary files created by Metro to check the health of the file watcher
-.metro-health-check*
-
-# Testing
-coverage/
-
-# Env files
+# Project local environment settings
 .env
 .env.local
-.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-lerna-debug.log*
+# React Native bundling output
+*.bundle
 
-# Lock files
-package-lock.json
-yarn.lock
+# Expo files
+.expo/
+.expo-shared/
+
+# Pods
+Pods/
+Podfile.lock
+
+# Xcode
+xcuserdata/
+*.xcworkspace
+*.xcuserstate
+
+# IntelliJ
+*.iml
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Temporary files
+.tmp/
+temp/
+tmp/
+
+# Build directories
+build/
+dist/
+out/
+
+# Coverage
+coverage/
+
+# Babel cache
+.babelrc
+.babel.json
+.babel.js
+
+# Metro bundler cache
+/metro-cache/
+
+# CocoaPods
+.cocoapods/
 
 # Misc
-**/.idea/
-**/.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+#vendor
+/vendor
