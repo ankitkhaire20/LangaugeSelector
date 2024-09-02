@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         backgroundColor: Color.GREY_TEXT,
+
     },
     switchContainer: {
         flexDirection: 'row',
@@ -24,7 +25,6 @@ const styles = StyleSheet.create({
     contentContainer: {
         padding: 20,
     },
-
     title: {
         fontSize: 18,
         marginBottom: 20,
@@ -51,10 +51,30 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 18,
+        fontWeight: 'bold',
     },
     text: {
         fontSize: 18,
     },
+    bottomSheetContent: {
+        flex: 1,
+        padding: 20,
+    },
+    optionText: {
+        fontSize: 16,
+    },
+    changeThemeButton: {
+        borderRadius: 5,
+    },
+    buttonText: {
+        fontSize: 16,
+
+    },
+    option: {
+        padding: 15,
+        borderRadius: 5,
+        marginVertical: 5,
+    }
 });
 
 export default styles;

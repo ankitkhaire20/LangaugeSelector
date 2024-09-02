@@ -1,48 +1,36 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
-import ProfileScreenComponent from "./ProfileScreenComponent";
-
+import React, { useCallback, useRef } from 'react';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
-import { Button, Text, View } from "react-native";
-import styles from "./styles";
 
+import { useTheme } from '../../context/ThmeContext'; // Adjust the import path
+import ProfileScreenComponent from './ProfileScreenComponent'; // Adjust the import path
 
 const ProfileScreenContainer: React.FC = () => {
-
-    const [isEnabled, setIsEnabled] = useState(false)
-
-
     const bottomSheetRef = useRef<BottomSheet>(null);
+    const { theme, setTheme, currentThemeProperties } = useTheme();
 
-    // callbacks
     const handleSheetChanges = useCallback((index: number) => {
-        console.log('handleSheetChanges', index);
+        console.log('Bottom Sheet Index:', index);
     }, []);
 
-    const sheetRef = useRef<BottomSheet>(null);
+    const handleThemeSelect = (theme: 'dark' | 'light' | 'system') => {
+        setTheme(theme);
+        bottomSheetRef.current?.close();
+    };
 
-    // variables
-    const snapPoints = useMemo(() => ["25%", "50%", "90%"], []);
-
-    // callbacks
-    const handleSheetChange = useCallback((index: any) => {
-        console.log("handleSheetChange", index);
-    }, []);
-    const handleSnapPress = useCallback((index: number) => {
-        sheetRef.current?.snapToIndex(index);
-    }, []);
-    const handleClosePress = useCallback(() => {
-        sheetRef.current?.close();
-    }, []);
-
+    const handleExpandBottomSheet = () => {
+        bottomSheetRef.current?.expand();
+    };
 
     return (
-        <>
-            <ProfileScreenComponent
-                isEnabled={false}
-                toggleSwitch={function (): void {
-                    throw new Error("Function not implemented.");
-                }} />
-        </>
-    )
-}
+        <ProfileScreenComponent
+            theme={theme}
+            currentThemeProperties={currentThemeProperties}
+            onChangeTheme={handleThemeSelect}
+            onExpandBottomSheet={handleExpandBottomSheet}
+            bottomSheetRef={bottomSheetRef}
+            handleSheetChanges={handleSheetChanges}
+        />
+    );
+};
+
 export default ProfileScreenContainer;

@@ -1,94 +1,86 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Button, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native";
+import React from 'react';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import styles from "./styles";
-import CheckBox from "../../components/CheckBox/CheckBox";
-import CustomIcon from "../../components/customIcon";
-
-
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import styles from './styles';
 
 interface ProfileScreenComponentProps {
-    isEnabled: boolean;
-    toggleSwitch: () => void;
+    theme: 'dark' | 'light' | 'system';
+    currentThemeProperties: {
+        backgroundColor: string;
+        textColor: string;
+    };
+    onChangeTheme: (theme: 'dark' | 'light' | 'system') => void;
+    onExpandBottomSheet: () => void;
+    bottomSheetRef: React.RefObject<BottomSheet>;
+    handleSheetChanges: (index: number) => void;
 }
 
-
-// ProfileScreenComponent.tsx
-
-const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({ isEnabled, toggleSwitch }) => {
-
-    const bottomSheetRef = useRef<BottomSheet>(null);
-
-    const handleSheetChanges = useCallback((index: number) => {
-        console.log('handleSheetChanges', index);
-    }, []);
-
-    const initialThemes = [
-        { index: 0, theme: 'system', checked: false },
-        { index: 1, theme: 'light', checked: false },
-        { index: 2, theme: 'dark', checked: false },
-    ];
-
-    const [themes, setThemes] = useState(initialThemes);
-
-
-
-    const handleThemeSelect = (index: number) => {
-        const updatedThemes = themes.map((themeOption) => ({
-            ...themeOption,
-            checked: themeOption.index === index,
-        }));
-
-        const selectedTheme = updatedThemes.find((item) => item.checked)?.theme;
-        console.log("selectedTheme---", selectedTheme);
-
-        bottomSheetRef.current?.close();
-        setThemes(updatedThemes);
-    };
-
-
-
+const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({
+    theme,
+    currentThemeProperties,
+    onChangeTheme,
+    onExpandBottomSheet,
+    bottomSheetRef,
+    handleSheetChanges
+}) => {
     return (
-        <GestureHandlerRootView style={{ flex: 1 }}>
-            <View style={styles.container}>
-                <View style={styles.switchContainer}>
-                    <Text style={{}}>Current Theme: { }</Text>
-                    <Button title="Change Theme" onPress={() => bottomSheetRef.current?.expand()} />
-                </View>
-                <BottomSheet
-                    ref={bottomSheetRef}
-                    index={-1}
-                    snapPoints={[250]}
-                    onChange={handleSheetChanges}
+        <GestureHandlerRootView style={[styles.container, {
+            backgroundColor: currentThemeProperties.backgroundColor
+        }]}>
+            <View style={styles.switchContainer}>
+                <Text style={[styles.headerText,
+                { color: currentThemeProperties.textColor }]}>
+                    Theme: {theme}
+                </Text>
+                <TouchableOpacity
+                    style={[styles.changeThemeButton,]}
+                    onPress={() => bottomSheetRef.current?.expand()}
                 >
-                    <BottomSheetView style={styles.contentContainer}>
-                        <View style={styles.header}>
-                            <Text style={styles.headerText}>Select Theme</Text>
-                            <TouchableOpacity onPress={() => bottomSheetRef.current?.close()}>
-                                <CustomIcon name="close" size={24} color={'#000'} />
-                            </TouchableOpacity>
-                        </View>
-                        {themes.map((themeOption) => (
-                            <TouchableOpacity
-                                key={themeOption.index}
-                                onPress={() => handleThemeSelect(themeOption.index)}
-                                style={styles.checkboxWrapper}
-                            >
-                                <CheckBox
-                                    checked={themeOption.checked}
-                                    onToggle={() => handleThemeSelect(themeOption.index)}
-                                />
-                                <Text style={styles.checkboxLabel}>{themeOption.theme}</Text>
-                            </TouchableOpacity>
-                        ))}
-                    </BottomSheetView>
-                </BottomSheet>
+                    <Text style={[styles.buttonText,
+                    { color: currentThemeProperties.textColor }]}>
+                        Change Theme
+                    </Text>
+                </TouchableOpacity>
             </View>
+            <BottomSheet
+                ref={bottomSheetRef}
+                index={-1}
+                snapPoints={[250]}
+                onChange={handleSheetChanges}
+            >
+                <BottomSheetView style={[styles.bottomSheetContent, { backgroundColor: currentThemeProperties.backgroundColor }]}>
+                    <Text style={[styles.headerText, { color: currentThemeProperties.textColor }]}>
+                        Select Theme
+                    </Text>
+                    <TouchableOpacity
+                        style={[styles.option, { backgroundColor: theme === 'dark' ? '#e0e0e0' : '#fff' }]}
+                        onPress={() => onChangeTheme('dark')}
+                    >
+                        <Text style={[styles.optionText, { color: theme === 'dark' ? '#000' : '#000' }]}>
+                            Dark Mode
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[styles.option, { backgroundColor: theme === 'light' ? '#e0e0e0' : '#fff' }]}
+                        onPress={() => onChangeTheme('light')}
+                    >
+                        <Text style={[styles.optionText, { color: theme === 'light' ? '#000' : '#000' }]}>
+                            Light Mode
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[styles.option, { backgroundColor: theme === 'system' ? '#e0e0e0' : '#fff' }]}
+                        onPress={() => onChangeTheme('system')}
+                    >
+                        <Text style={[styles.optionText, { color: theme === 'system' ? '#000' : '#000' }]}>
+                            System Default
+                        </Text>
+                    </TouchableOpacity>
+                </BottomSheetView>
+            </BottomSheet>
         </GestureHandlerRootView>
     );
 };
 
 export default ProfileScreenComponent;
-

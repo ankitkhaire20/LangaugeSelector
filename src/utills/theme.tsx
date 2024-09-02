@@ -51,6 +51,10 @@ export const Color = {
     DISABLED_COLOR: '#FFFFFF33',
     MY_BOOKING_COLOR: '#F1B44C33',
     BOOKED_GRAY: '#ADB5BD80',
+    LIGHT_GRAY: '#e0e0e0',         // Example color
+    BACKGROUND: '#ffffff',         // Set this to the background color you need
+    OPTION_BACKGROUND: '#f8f8f8',  // Set this to the background color of options
+    OPTION_TEXT: '#333333',
 
 
     // DISABLE_TEXT:'rgba(255, 255, 255, 1)',
