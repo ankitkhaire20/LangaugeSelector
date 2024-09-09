@@ -1,3 +1,8 @@
+Introduction
+This is a Todo App that allows users to manage their daily tasks efficiently. The app includes features like user authentication, theme customization, and the ability to log out. It is built using React and leverages Context API for managing global state, particularly for user authentication and theme settings.
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
