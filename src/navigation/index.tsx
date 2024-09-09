@@ -9,6 +9,7 @@ import CustomIcon from "../components/customIcon";
 import { Color, FontSize } from "../utills/theme";
 import ProfileScreenContainer from "../screens/profile/ProfileScreenContainer";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import ListScreenContaner from "../screens/List/ListScreenContainer";
 
 // Auth Stack Navigator
 const Auth = createNativeStackNavigator();
@@ -32,7 +33,12 @@ export const HomeStack: React.FC = () => {
             <Home.Screen
                 name="HomeScreen"
                 component={HomeScreenContainer}
-                options={{ headerShown: false }}
+                options={{ headerShown: true }} // Show header for HomeScreen
+            />
+            <Home.Screen
+                name="ListScreen"
+                component={ListScreenContaner}
+                options={{ headerShown: true }} // Show header for ListScreen
             />
         </Home.Navigator>
     );
@@ -99,12 +105,12 @@ export const TabBarNavigation: React.FC = () => {
         >
             <TabBar.Screen
                 name={Routes.Home}
-                options={{ headerShown: true }}
+                options={{ headerShown: false }} // Hide header for tab bar
                 component={HomeStack}
             />
             <TabBar.Screen
                 name={Routes.Profile}
-                options={{ headerShown: false }}
+                options={{ headerShown: false }} // Hide header for tab bar
                 component={ProfileStack}
             />
         </TabBar.Navigator>
@@ -121,7 +127,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
     },
     tabBar: {
-
         // paddingBottom: 5,
     },
     tabBarLabel: {

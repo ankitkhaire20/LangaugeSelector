@@ -3,6 +3,9 @@ import { View, Text, Button, TouchableOpacity } from 'react-native';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import styles from './styles';
+import CustomIcon from '../../components/customIcon';
+import useAuth from '../../components/hooks/useAuth';
+import { Color, FontFamily } from '../../utills/theme';
 
 interface ProfileScreenComponentProps {
     theme: 'dark' | 'light' | 'system';
@@ -14,6 +17,7 @@ interface ProfileScreenComponentProps {
     onExpandBottomSheet: () => void;
     bottomSheetRef: React.RefObject<BottomSheet>;
     handleSheetChanges: (index: number) => void;
+    onPressLogout: () => void;
 }
 
 const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({
@@ -22,12 +26,21 @@ const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({
     onChangeTheme,
     onExpandBottomSheet,
     bottomSheetRef,
+    onPressLogout,
     handleSheetChanges
 }) => {
+    const { logout, userDetails } = useAuth();
+
     return (
         <GestureHandlerRootView style={[styles.container, {
             backgroundColor: currentThemeProperties.backgroundColor
         }]}>
+            <Text style={{
+                fontSize: 24, color: currentThemeProperties.textColor,
+
+            }} >
+                Hello {userDetails?.Firstname}
+                {userDetails?.lastName}</Text>
             <View style={styles.switchContainer}>
                 <Text style={[styles.headerText,
                 { color: currentThemeProperties.textColor }]}>
@@ -43,6 +56,20 @@ const ProfileScreenComponent: React.FC<ProfileScreenComponentProps> = ({
                     </Text>
                 </TouchableOpacity>
             </View>
+
+            <View style={styles.switchContainer}>
+                <Text style={[styles.headerText,
+                { color: currentThemeProperties.textColor }]}>
+                    LogOut
+                </Text>
+                <TouchableOpacity
+                    style={[styles.changeThemeButton,]}
+                    onPress={() => onPressLogout()}
+                >
+                    <CustomIcon name="logout" size={28} />
+                </TouchableOpacity>
+            </View>
+
             <BottomSheet
                 ref={bottomSheetRef}
                 index={-1}

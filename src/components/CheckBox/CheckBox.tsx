@@ -1,50 +1,42 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import CustomIcon from "../customIcon";
 
 interface CheckBoxProps {
-    checked: boolean;
-    onToggle: () => void;
+    label: string,
+    onPressItem: (item: object) => void;
+    checked: boolean
 }
 
-const CheckBox: React.FC<CheckBoxProps> = ({ checked, onToggle }) => {
+
+const CheckBox: React.FC<CheckBoxProps> = (props) => {
+
+    const { label, onPressItem, checked } = props
+
     return (
-        <TouchableWithoutFeedback onPress={onToggle}>
-            <View style={styles.checkBoxContainer}>
-                <View style={[styles.checkBox, checked && styles.checkBoxChecked]}>
-                    {checked && <Text style={styles.checkMark}>✔</Text>}
-                </View>
-            </View>
-        </TouchableWithoutFeedback>
-    );
-};
+        <>
+
+            <TouchableOpacity style={styles.ViewContainer}
+                onPress={onPressItem}>
+                <CustomIcon name={checked ? "checked" : "unchecked"}
+                    size={30} />
+                <Text style={styles.labelText} >{label}</Text>
+            </TouchableOpacity >
+
+        </>
+    )
+}
 
 const styles = StyleSheet.create({
-    checkBoxContainer: {
-        width: 24,
-        height: 24,
-        borderRadius: 4,
-        borderWidth: 1,
-        borderColor: 'black',
-        justifyContent: 'center',
+    ViewContainer: {
+        flexDirection: 'row',
         alignItems: 'center',
+        flexWrap: 'wrap',
     },
-    checkBox: {
-        width: 20,
-        height: 20,
-        borderRadius: 4,
-        borderWidth: 1,
-        borderColor: 'black',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'transparent',
-    },
-    checkBoxChecked: {
-        backgroundColor: 'black',
-    },
-    checkMark: {
-        color: 'white',
-        fontSize: 16,
-    },
-});
+    labelText: {
+        fontSize: 24,
+        padding: 10
+    }
+})
 
 export default CheckBox;

@@ -12,16 +12,16 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		53E8E4932C7DD66F00C758D5 /* icomoon.eot in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E4882C7DD66F00C758D5 /* icomoon.eot */; };
-		53E8E4942C7DD66F00C758D5 /* icomoon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E4892C7DD66F00C758D5 /* icomoon.svg */; };
-		53E8E4952C7DD66F00C758D5 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E48A2C7DD66F00C758D5 /* icomoon.ttf */; };
-		53E8E4962C7DD66F00C758D5 /* icomoon.woff in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E48B2C7DD66F00C758D5 /* icomoon.woff */; };
-		53E8E4972C7DD66F00C758D5 /* Moderustic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E48C2C7DD66F00C758D5 /* Moderustic-Bold.ttf */; };
-		53E8E4982C7DD66F00C758D5 /* Moderustic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E48D2C7DD66F00C758D5 /* Moderustic-Regular.ttf */; };
-		53E8E4992C7DD66F00C758D5 /* Moderustic-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E48E2C7DD66F00C758D5 /* Moderustic-SemiBold.ttf */; };
-		53E8E49A2C7DD66F00C758D5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E48F2C7DD66F00C758D5 /* Roboto-Bold.ttf */; };
-		53E8E49B2C7DD66F00C758D5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E4902C7DD66F00C758D5 /* Roboto-Medium.ttf */; };
-		53E8E49C2C7DD66F00C758D5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E8E4912C7DD66F00C758D5 /* Roboto-Regular.ttf */; };
+		5367904B2C8B099F008C4C3E /* icomoon.eot in Resources */ = {isa = PBXBuildFile; fileRef = 536790402C8B099F008C4C3E /* icomoon.eot */; };
+		5367904C2C8B099F008C4C3E /* icomoon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 536790412C8B099F008C4C3E /* icomoon.svg */; };
+		5367904D2C8B099F008C4C3E /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790422C8B099F008C4C3E /* icomoon.ttf */; };
+		5367904E2C8B099F008C4C3E /* icomoon.woff in Resources */ = {isa = PBXBuildFile; fileRef = 536790432C8B099F008C4C3E /* icomoon.woff */; };
+		5367904F2C8B099F008C4C3E /* Moderustic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790442C8B099F008C4C3E /* Moderustic-Bold.ttf */; };
+		536790502C8B099F008C4C3E /* Moderustic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790452C8B099F008C4C3E /* Moderustic-Regular.ttf */; };
+		536790512C8B099F008C4C3E /* Moderustic-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790462C8B099F008C4C3E /* Moderustic-SemiBold.ttf */; };
+		536790522C8B099F008C4C3E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790472C8B099F008C4C3E /* Roboto-Bold.ttf */; };
+		536790532C8B099F008C4C3E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790482C8B099F008C4C3E /* Roboto-Medium.ttf */; };
+		536790542C8B099F008C4C3E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536790492C8B099F008C4C3E /* Roboto-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-LanguageSelector-LanguageSelectorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-LanguageSelector-LanguageSelectorTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E66E9C7174111D06F16C407D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 885026EE331A23D122DAE065 /* PrivacyInfo.xcprivacy */; };
@@ -50,16 +50,16 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = LanguageSelector/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-LanguageSelector-LanguageSelectorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LanguageSelector-LanguageSelectorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-LanguageSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageSelector.debug.xcconfig"; path = "Target Support Files/Pods-LanguageSelector/Pods-LanguageSelector.debug.xcconfig"; sourceTree = "<group>"; };
-		53E8E4882C7DD66F00C758D5 /* icomoon.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.eot; sourceTree = "<group>"; };
-		53E8E4892C7DD66F00C758D5 /* icomoon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icomoon.svg; sourceTree = "<group>"; };
-		53E8E48A2C7DD66F00C758D5 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
-		53E8E48B2C7DD66F00C758D5 /* icomoon.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.woff; sourceTree = "<group>"; };
-		53E8E48C2C7DD66F00C758D5 /* Moderustic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderustic-Bold.ttf"; sourceTree = "<group>"; };
-		53E8E48D2C7DD66F00C758D5 /* Moderustic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderustic-Regular.ttf"; sourceTree = "<group>"; };
-		53E8E48E2C7DD66F00C758D5 /* Moderustic-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderustic-SemiBold.ttf"; sourceTree = "<group>"; };
-		53E8E48F2C7DD66F00C758D5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		53E8E4902C7DD66F00C758D5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		53E8E4912C7DD66F00C758D5 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		536790402C8B099F008C4C3E /* icomoon.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.eot; sourceTree = "<group>"; };
+		536790412C8B099F008C4C3E /* icomoon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icomoon.svg; sourceTree = "<group>"; };
+		536790422C8B099F008C4C3E /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
+		536790432C8B099F008C4C3E /* icomoon.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.woff; sourceTree = "<group>"; };
+		536790442C8B099F008C4C3E /* Moderustic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderustic-Bold.ttf"; sourceTree = "<group>"; };
+		536790452C8B099F008C4C3E /* Moderustic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderustic-Regular.ttf"; sourceTree = "<group>"; };
+		536790462C8B099F008C4C3E /* Moderustic-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderustic-SemiBold.ttf"; sourceTree = "<group>"; };
+		536790472C8B099F008C4C3E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		536790482C8B099F008C4C3E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		536790492C8B099F008C4C3E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-LanguageSelector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageSelector.release.xcconfig"; path = "Target Support Files/Pods-LanguageSelector/Pods-LanguageSelector.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-LanguageSelector-LanguageSelectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageSelector-LanguageSelectorTests.debug.xcconfig"; path = "Target Support Files/Pods-LanguageSelector-LanguageSelectorTests/Pods-LanguageSelector-LanguageSelectorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-LanguageSelector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LanguageSelector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +109,7 @@
 		13B07FAE1A68108700A75B9A /* LanguageSelector */ = {
 			isa = PBXGroup;
 			children = (
-				53E8E4922C7DD66F00C758D5 /* fonts */,
+				5367904A2C8B099F008C4C3E /* fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -132,19 +132,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		53E8E4922C7DD66F00C758D5 /* fonts */ = {
+		5367904A2C8B099F008C4C3E /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				53E8E4882C7DD66F00C758D5 /* icomoon.eot */,
-				53E8E4892C7DD66F00C758D5 /* icomoon.svg */,
-				53E8E48A2C7DD66F00C758D5 /* icomoon.ttf */,
-				53E8E48B2C7DD66F00C758D5 /* icomoon.woff */,
-				53E8E48C2C7DD66F00C758D5 /* Moderustic-Bold.ttf */,
-				53E8E48D2C7DD66F00C758D5 /* Moderustic-Regular.ttf */,
-				53E8E48E2C7DD66F00C758D5 /* Moderustic-SemiBold.ttf */,
-				53E8E48F2C7DD66F00C758D5 /* Roboto-Bold.ttf */,
-				53E8E4902C7DD66F00C758D5 /* Roboto-Medium.ttf */,
-				53E8E4912C7DD66F00C758D5 /* Roboto-Regular.ttf */,
+				536790402C8B099F008C4C3E /* icomoon.eot */,
+				536790412C8B099F008C4C3E /* icomoon.svg */,
+				536790422C8B099F008C4C3E /* icomoon.ttf */,
+				536790432C8B099F008C4C3E /* icomoon.woff */,
+				536790442C8B099F008C4C3E /* Moderustic-Bold.ttf */,
+				536790452C8B099F008C4C3E /* Moderustic-Regular.ttf */,
+				536790462C8B099F008C4C3E /* Moderustic-SemiBold.ttf */,
+				536790472C8B099F008C4C3E /* Roboto-Bold.ttf */,
+				536790482C8B099F008C4C3E /* Roboto-Medium.ttf */,
+				536790492C8B099F008C4C3E /* Roboto-Regular.ttf */,
 			);
 			name = fonts;
 			path = ../src/assets/fonts;
@@ -285,19 +285,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53E8E4992C7DD66F00C758D5 /* Moderustic-SemiBold.ttf in Resources */,
+				536790512C8B099F008C4C3E /* Moderustic-SemiBold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				53E8E4982C7DD66F00C758D5 /* Moderustic-Regular.ttf in Resources */,
-				53E8E4932C7DD66F00C758D5 /* icomoon.eot in Resources */,
-				53E8E49A2C7DD66F00C758D5 /* Roboto-Bold.ttf in Resources */,
+				536790502C8B099F008C4C3E /* Moderustic-Regular.ttf in Resources */,
+				5367904B2C8B099F008C4C3E /* icomoon.eot in Resources */,
+				536790522C8B099F008C4C3E /* Roboto-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				53E8E4962C7DD66F00C758D5 /* icomoon.woff in Resources */,
-				53E8E4972C7DD66F00C758D5 /* Moderustic-Bold.ttf in Resources */,
-				53E8E49B2C7DD66F00C758D5 /* Roboto-Medium.ttf in Resources */,
-				53E8E4952C7DD66F00C758D5 /* icomoon.ttf in Resources */,
-				53E8E49C2C7DD66F00C758D5 /* Roboto-Regular.ttf in Resources */,
+				5367904E2C8B099F008C4C3E /* icomoon.woff in Resources */,
+				5367904F2C8B099F008C4C3E /* Moderustic-Bold.ttf in Resources */,
+				536790532C8B099F008C4C3E /* Roboto-Medium.ttf in Resources */,
+				5367904D2C8B099F008C4C3E /* icomoon.ttf in Resources */,
+				536790542C8B099F008C4C3E /* Roboto-Regular.ttf in Resources */,
 				E66E9C7174111D06F16C407D /* PrivacyInfo.xcprivacy in Resources */,
-				53E8E4942C7DD66F00C758D5 /* icomoon.svg in Resources */,
+				5367904C2C8B099F008C4C3E /* icomoon.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
