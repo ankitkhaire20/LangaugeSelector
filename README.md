@@ -1,11 +1,14 @@
-Introduction
+![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 23](https://github.com/user-attachments/assets/228daf94-a299-46b7-8552-3d3bd983c722)Introduction
 This is a Todo App that allows users to manage their daily tasks efficiently. The app includes features like user authentication, theme customization, and the ability to log out. It is built using React and leverages Context API for managing global state, particularly for user authentication and theme settings.
 
+![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 49 46](https://github.com/user-attachments/assets/ed2d34fb-fcac-4797-9961-659721ab24d4)
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 25](https://github.com/user-attachments/assets/88c86f22-0603-401a-877e-b18c104e7be0)
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 23](https://github.com/user-attachments/assets/f4c51973-85d1-49ef-a73a-95d880fcac51)
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 03](https://github.com/user-attachments/assets/ea57aa1c-bdc1-4a74-bb90-83d1edce3091)
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 49 46](https://github.com/user-attachments/assets/0a70be20-d015-488d-96c9-c529f5debda9)
+![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 03](https://github.com/user-attachments/assets/869f6e78-d31d-431f-8532-e97447d16408)
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 23](https://github.com/user-attachments/assets/3601e50c-3278-46b1-b66f-c78e8144588b)
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-09-09 at 15 50 25](https://github.com/user-attachments/assets/be0e4497-abd3-4ef8-826f-813b38359bf4)
+
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
