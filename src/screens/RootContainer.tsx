@@ -27,7 +27,7 @@ const RootContainer: React.FC = () => {
                         />
                     ) : (
                         <BaseStack.Screen
-                            name={Routes.Auth}
+                            name={"Login Screen"}
                             component={AuthStack}
                         />
                     )}

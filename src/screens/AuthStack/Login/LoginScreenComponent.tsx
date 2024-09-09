@@ -35,7 +35,7 @@ const LoginScreenComponent: React.FC<LoginScreenComponentProps> = (props) => {
                 }}
                 render={({ field: { onChange, value } }) => (
                     <TextField
-                        label="Please Enter First Name"
+                        label="First Name:"
                         // leftIcon={value ? 'close' : undefined}
                         rightIcon={value ? 'close' : undefined}
                         onPressLeftIcon={() => {
@@ -70,7 +70,7 @@ const LoginScreenComponent: React.FC<LoginScreenComponentProps> = (props) => {
                 }}
                 render={({ field: { onChange, value } }) => (
                     <TextField
-                        label="Please Enter Last Name"
+                        label="Last Name:"
                         secureTextEntry={false}
                         value={value}
                         ref={lastnameRef} // Attach ref to last name TextField

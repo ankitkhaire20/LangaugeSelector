@@ -17,7 +17,7 @@ export const AuthStack: React.FC = () => {
     return (
         <Auth.Navigator>
             <Auth.Screen
-                name={Routes.Login}
+                name={'Login'}
                 component={LoginScreenContainer}
                 options={{ headerShown: false }}
             />
